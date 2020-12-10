@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
-[assembly: AssemblyTitle("OniPowerSensor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Advanced Wattage Sensor")]
+[assembly: AssemblyDescription("Oxygen Not Included Mod. Customizable 5-state dial gauge with color indication")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OniPowerSensor")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCompany("Dan Sadler")]
+[assembly: AssemblyProduct("Advanced Wattage Sensor")]
+[assembly: AssemblyCopyright("Copyright © 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
