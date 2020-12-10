@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OniPowerSensor", "OniPowerSensor.csproj", "{9EE3C177-E7B4-4A15-A902-5D26C6F97F5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EE3C177-E7B4-4A15-A902-5D26C6F97F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE3C177-E7B4-4A15-A902-5D26C6F97F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE3C177-E7B4-4A15-A902-5D26C6F97F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE3C177-E7B4-4A15-A902-5D26C6F97F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14AFBB89-DFEA-4396-85A9-009259B00C9F}
+	EndGlobalSection
+EndGlobal
