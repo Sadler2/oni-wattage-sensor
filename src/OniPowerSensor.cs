@@ -22,6 +22,7 @@ namespace OniPowerSensorMod
         private CopyBuildingSettings copyBuildingSettings;
         private int lastAnimState = -1;
         private float averageWattage = 0;
+        private MeterController meter;
 
         protected override void OnPrefabInit()
         {
@@ -42,6 +43,14 @@ namespace OniPowerSensorMod
         {
             base.OnSpawn();
             OnToggle += new System.Action<bool>(OnSwitchToggled);
+
+            var component = (KAnimControllerBase)this.GetComponent<KBatchedAnimController>();
+            this.meter = new MeterController(component, "needle", "meter", Meter.Offset.Infront, Grid.SceneLayer.NoLayer, new string[2]{
+                "meter_fill",
+                "meter_OL"
+            });
+            component.Play("on", KAnim.PlayMode.Paused, 1f, 0f);
+
             UpdateVisualState(true);
             UpdateLogicCircuit();
             wasOn = switchedOn;
@@ -51,7 +60,7 @@ namespace OniPowerSensorMod
         {
             currentWattage = Game.Instance.circuitManager.GetWattsUsedByCircuit(Game.Instance.circuitManager.GetCircuitID(Grid.PosToCell(this)));
             currentWattage = Mathf.Max(0.0f, currentWattage);
-            averageWattage = averageWattage * 0.9f + currentWattage * 0.1f;
+            averageWattage = averageWattage * 0.95f + currentWattage * 0.05f;
 
             UpdateVisualState(true);
 
@@ -87,37 +96,12 @@ namespace OniPowerSensorMod
 
         private void UpdateVisualState(bool force = false)
         {
-            KBatchedAnimController component = GetComponent<KBatchedAnimController>();
-
-            int animState;
-
-            if (averageWattage < 1.0)
+            if (thresholdWattage >= 1)
             {
-                animState = 0;
+                this.meter.SetPositionPercent(Mathf.Clamp01(averageWattage / thresholdWattage));
             } else
-            if (averageWattage < thresholdWattage*0.333)
             {
-                animState = 1;
-            }
-            else
-            if (averageWattage < thresholdWattage * 0.666)
-            {
-                animState = 2;
-            }
-            else
-            if (averageWattage < thresholdWattage)
-            {
-                animState = 3;
-            }
-            else
-            {
-                animState = 4;
-            }
-
-            if (animState != lastAnimState)
-            {
-                component.Play(animState.ToString(), KAnim.PlayMode.Once, 1f, 0.0f);
-                lastAnimState = animState;
+                this.meter.SetPositionPercent(1);
             }
         }
 
