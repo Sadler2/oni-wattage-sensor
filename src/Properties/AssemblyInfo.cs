@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
 [assembly: AssemblyTitle("Advanced Wattage Sensor")]
-[assembly: AssemblyDescription("Oxygen Not Included Mod. Customizable 5-state dial gauge with color indication")]
+[assembly: AssemblyDescription("Oxygen Not Included Mod. Customizable dial gauge with color indication")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dan Sadler")]
 [assembly: AssemblyProduct("Advanced Wattage Sensor")]
-[assembly: AssemblyCopyright("Copyright © 2020")]
+[assembly: AssemblyCopyright("Copyright © 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]

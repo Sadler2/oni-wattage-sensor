@@ -1,5 +1,5 @@
 ﻿using Database;
-using Harmony;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 namespace OniPowerSensorMod
 {
     [HarmonyPatch(typeof(GeneratedBuildings), "LoadGeneratedBuildings")]
-    public class Mod
+    public class Mod : KMod.UserMod2
     {
 
         private static void Prefix()
@@ -27,8 +27,7 @@ namespace OniPowerSensorMod
             }
 
             ModUtil.AddBuildingToPlanScreen("Automation", OniPowerSensorConfig.ID);
-            List<string> ls = new List<string>(Techs.TECH_GROUPING["AdvancedPowerRegulation"]) { OniPowerSensorConfig.ID };
-            Techs.TECH_GROUPING["AdvancedPowerRegulation"] = ls.ToArray();
+            Db.Get().Techs.Get("AdvancedPowerRegulation").AddUnlockedItemIDs(OniPowerSensorConfig.ID);
         }
         private static void Postfix()
         {
